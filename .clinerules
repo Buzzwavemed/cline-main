@@ -1,0 +1,140 @@
+# Cline Project Rules and Guidelines
+
+## Project Structure
+
+### Core Components
+- `src/extension.ts`: Main entry point for the VSCode extension
+- `src/core/Cline.ts`: Core implementation of the Cline agent
+- `src/api/`: API handlers for different language model providers
+- `src/services/`: Shared services like logging, browser, MCP
+- `src/integrations/`: Integration with VSCode features
+- `src/utils/`: Utility functions
+- `webview-ui/`: React-based chat interface
+
+### Documentation
+- `docs/`: User and developer documentation
+- `cline_docs/`: Memory Bank for maintaining context across sessions
+
+## Development Patterns
+
+### TypeScript Best Practices
+- Use TypeScript's type system effectively
+- Prefer interfaces for public APIs
+- Use type guards for runtime type checking
+- Leverage async/await for asynchronous operations
+
+### Extension Development
+- Follow VSCode extension guidelines
+- Use the extension API appropriately
+- Handle extension activation/deactivation properly
+- Manage webview lifecycle correctly
+
+### Tool Implementation
+- Each tool should have clear permission requirements
+- Tools should provide helpful error messages
+- Handle edge cases gracefully
+- Maintain consistent interface for all tools
+
+### MCP Integration
+- Follow the MCP protocol specification
+- Provide clear documentation for MCP servers
+- Handle server connection errors gracefully
+- Validate server responses
+
+## Memory Bank Guidelines
+
+### File Organization
+- `projectbrief.md`: Foundation document defining core requirements
+- `productContext.md`: Why the project exists and problems it solves
+- `activeContext.md`: Current work focus and considerations
+- `systemPatterns.md`: System architecture and design patterns
+- `techContext.md`: Technologies used and technical constraints
+- `progress.md`: Current status, what works, and what's left to build
+
+### Updating Process
+- Update Memory Bank files when discovering new project patterns
+- Update after implementing significant changes
+- Keep `activeContext.md` and `progress.md` current
+- Ensure all files remain consistent with each other
+
+## Code Style
+
+### General
+- Follow the established code style in the project
+- Use ESLint and Prettier for code quality
+- Write clear comments for complex logic
+- Use meaningful variable and function names
+
+### React Components
+- Use functional components with hooks
+- Keep components focused on a single responsibility
+- Use TypeScript for component props
+- Follow React best practices
+
+### Error Handling
+- Use try/catch blocks for error-prone operations
+- Provide meaningful error messages
+- Log errors appropriately
+- Handle errors at the appropriate level
+
+## Testing Guidelines
+
+### Unit Tests
+- Write unit tests for core functionality
+- Use mocks for external dependencies
+- Ensure good test coverage
+- Test edge cases and error conditions
+
+### Integration Tests
+- Test integration with VSCode API
+- Test webview communication
+- Test tool execution flow
+- Test error recovery
+
+## Documentation Standards
+
+### Code Documentation
+- Document public APIs thoroughly
+- Explain complex algorithms
+- Document known limitations
+- Keep documentation up-to-date with code changes
+
+### User Documentation
+- Write clear, concise user guides
+- Provide examples for common use cases
+- Document configuration options
+- Include troubleshooting information
+
+## Security Considerations
+
+### Sensitive Files
+- Do not read or modify sensitive files
+- Respect .clineignore settings
+- Handle user credentials securely
+- Be cautious with terminal commands
+
+### Permission Model
+- Always respect the permission model
+- Clearly explain tool actions before execution
+- Honor auto-approval settings
+- Provide clear feedback on permission decisions
+
+## Known Challenges
+
+### Context Window Management
+- Be mindful of context window limitations
+- Use efficient prompting techniques
+- Prioritize relevant information
+- Handle truncation gracefully
+
+### Cross-platform Compatibility
+- Test on Windows, macOS, and Linux
+- Handle path differences between platforms
+- Be aware of terminal differences
+- Consider browser compatibility issues
+
+### Model-specific Behaviors
+- Adapt to different language model capabilities
+- Handle streaming responses appropriately
+- Manage token usage efficiently
+- Provide fallbacks for model limitations
